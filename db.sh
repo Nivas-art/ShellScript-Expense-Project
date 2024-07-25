@@ -1,7 +1,8 @@
 #!/bin/bash
 
 USERID=$(id -u)
-TIMESTAMP=$(date)
+
+TIMESTAMP=$(date +%f-%h-%m-%s)
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$TIMESTAMP-$SCRIPT_NAME.log
 R="\e[31m"
@@ -9,7 +10,7 @@ G="\e[32m"
 N="\e[0m"
 
 VALIDATE(){
-    if [ $1 -ge 0 ]
+    if [ $1 -ne 0 ]
 then
     echo "$2....FAILURE"
     exit 1
@@ -18,7 +19,7 @@ else
 fi
 }
 
-if [ $USERID -ge 0 ]
+if [ $USERID -ne 0 ]
 then 
     echo "your not in root user"
     exit 1
