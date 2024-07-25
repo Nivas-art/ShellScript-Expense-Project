@@ -1,5 +1,6 @@
 #!/bin/bash
 
+USERID=$(id -u)
 TIMESTAMP=$(date)
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$TIMESTAMP-$SCRIPT_NAME.log
@@ -7,7 +8,6 @@ R="\e[31m"
 G="\e[32m"
 N="\e[0m"
 
-USERID=$(id -u)
 if [ $USERID -ge 0 ]
 then 
     echo "your not in root user"
