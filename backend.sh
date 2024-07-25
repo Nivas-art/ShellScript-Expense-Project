@@ -54,6 +54,7 @@ VALIDATE $? "downloaded"
 cd /app &>>$LOGFILE
 VALIDATE $? "gone"
 
+rm -rf /app/*
 unzip /tmp/backend.zip &>>$LOGFILE
 VALIDATE $? "unziped"
 
