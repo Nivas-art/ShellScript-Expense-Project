@@ -9,4 +9,6 @@ else
     exit 1
 fi
 
-files=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
+FILES=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
+
+echo "files to delete: $FILES"
