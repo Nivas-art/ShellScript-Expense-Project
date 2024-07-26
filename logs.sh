@@ -9,6 +9,12 @@ else
     exit 1
 fi
 
-FILES=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14) /n
+FILES=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
 
 echo "files to delete: $FILES"
+
+while IF= read -r line
+do 
+  echo "deleting files: $line"
+  rm -rf $line
+done <<< $FILES
