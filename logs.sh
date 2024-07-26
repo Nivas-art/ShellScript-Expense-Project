@@ -9,4 +9,4 @@ else
     exit 1
 fi
 
-files=$(find /tmp/log-files/ -name "*.log" -mtime +14)
+files=$(find ls -l /tmp/log-files/ -name "*.log" -mtime +14)
