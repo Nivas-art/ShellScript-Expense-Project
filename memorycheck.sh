@@ -10,7 +10,7 @@ USAGE=$(echo $line | awk -F " " '{print $6F}' | cut -d "%" -f1)
 FOLEDR=$(echo $line | awk -F " " '{print $NF}')
 if [ $USAGE -ge $DISK_THRESHOLD ]
 then 
-    MESSAGE+="$FOLEDR: is more than $DISK_THRESHOLD: current usage: $USAGE"
+    MESSAGE+="$FOLEDR: is more than $DISK_THRESHOLD: current usage: $USAGE" \n
 fi
 done <<<$DISK_USAGE
 
