@@ -9,3 +9,4 @@ else
     exit 1
 fi
 
+files=$(find log-files -name "*.log" -mtime +14)
